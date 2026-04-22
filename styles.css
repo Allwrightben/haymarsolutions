@@ -185,38 +185,95 @@ body {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    width: 100%;
 }
 
 .service-card {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    height: 400px;
     transition: all 0.3s ease;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(0, 86, 179, 0.15);
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-.service-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.service-image {
+    flex: 4;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.service-card h3 {
+.service-text {
+    flex: 1;
+    padding: 1rem;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-text h3 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
     font-size: 1.3rem;
 }
 
-.service-card p {
+.service-text p {
     color: var(--light-text);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+}
+
+.service-overlay h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.service-overlay p {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.service-card:hover .service-overlay {
+    opacity: 1;
+}
+
+/* Responsive Services Grid */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 /* About Section */
