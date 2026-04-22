@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haymar Solutions - Payroll & Advisory Services</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="assets/images/haymarsolutions.avif" alt="Haymar Solutions Logo">
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="assets/images/videos/jenga.mp4" type="video/mp4">
+            Your browser does not support the video background.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h2>Labour Supply and Payroll Taking Time Away from Actually Running Your Business?</h2>
+                
+                <a href="#contact" class="cta-button">Get in touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p class="section-intro">Comprehensive solutions to ensure efficient and compliant operations</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Payroll Management</h3>
+                    <p>End-to-end payroll processing with full compliance and accuracy</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">👔</div>
+                    <h3>Contractor Engagement</h3>
+                    <p>Seamless contractor management and engagement services</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏦</div>
+                    <h3>Banking & Financial Services</h3>
+                    <p>Integrated banking solutions and financial coordination</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Insurance Solutions</h3>
+                    <p>Comprehensive insurance advisory and placement services</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Funding & Compliance</h3>
+                    <p>Access to funding options with full regulatory compliance</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Business Process Outsourcing</h3>
+                    <p>Outsourced operational services to optimize your business</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Why Choose Haymar Solutions?</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>We provide specialised advisory and intermediary services to businesses within the labour supply, recruitment, contracting, and payroll sectors. Our primary purpose is to advise and coordinate the necessary services to ensure efficient and compliant operations.</p>
+                    <div class="benefits">
+                        <div class="benefit-item">
+                            <span class="check">✓</span>
+                            <p>Single point of contact for all your needs</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="check">✓</span>
+                            <p>Trusted, industry-approved providers</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="check">✓</span>
+                            <p>Complete compliance and regulatory expertise</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="check">✓</span>
+                            <p>Streamlined complex arrangements</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="section-intro">Ready to streamline your operations? Contact us today</p>
+            
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Your Phone">
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Select a Service</option>
+                        <option value="payroll">Payroll Management</option>
+                        <option value="contractor">Contractor Engagement</option>
+                        <option value="banking">Banking Services</option>
+                        <option value="insurance">Insurance Solutions</option>
+                        <option value="funding">Funding & Compliance</option>
+                        <option value="bpo">Business Process Outsourcing</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Haymar Solutions. All rights reserved.</p>
+            <p>Specialised Advisory & Intermediary Services</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
