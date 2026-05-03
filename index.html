@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haymar Solutions - Payroll & Advisory Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,6 +26,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                
             </div>
         </div>
     </nav>
@@ -41,21 +43,39 @@
                 <h2>Labour Supply and Payroll Taking Time Away from Actually Running Your Business?</h2>
                 
                 <a href="#contact" class="cta-button">Get in touch</a>
+                
+                <p style="margin-top: 100px;">A payroll brokerage that will find the best, HMRC-compliant payroll solutions for your business.</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Info Cards Section -->
+    <section class="info-cards-section">
+        <div class="container">
+            <div class="info-cards">
+                <div class="info-card card-1">
+                    <div class="card-number" data-target="500">0</div>
+                    <p class="card-text">Clients and Counting</p>
+                </div>
+                <div class="info-card card-2">
+                    <div class="card-number" data-target="10">0</div>
+                    <p class="card-text">Years of Experience</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
-        <h2>Our Services</h2>
-        <p class="section-intro">Comprehensive solutions to ensure efficient and compliant operations</p>
+        
         
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-image" style="background-image: url('assets/images/payroll.jpg');"></div>
                 <div class="service-text">
-                    <h3>Payroll Management</h3>
-                    <p>End-to-end payroll processing with full compliance and accuracy</p>
+                    <h3>HMRC Compliant Payroll Management</h3>
+                    <p>We compare multiple payroll providers to get the best deal for your organisation</p>
                 </div>
                 <div class="service-overlay">
                     <h3>Payroll Management</h3>
@@ -125,7 +145,7 @@
                         </div>
                         <div class="benefit-item">
                             <span class="check">✓</span>
-                            <p>Complete compliance and regulatory expertise</p>
+                            <p>Complete HMRC compliance and regulatory expertise</p>
                         </div>
                         <div class="benefit-item">
                             <span class="check">✓</span>
@@ -142,6 +162,11 @@
         <div class="container">
             <h2>Get In Touch</h2>
             <p class="section-intro">Ready to streamline your operations? Contact us today</p>
+            
+            <div class="contact-details">
+                <p><strong>Phone:</strong> <a href="tel:02080731952">0208 073 1952</a></p>
+                <p><strong>Email:</strong> <a href="mailto:info@haymarsolutions.com">info@haymarsolutions.com</a></p>
+            </div>
             
             <form class="contact-form">
                 <div class="form-group">
@@ -175,6 +200,7 @@
         <div class="container">
             <p>&copy; 2015 Haymar Solutions. All rights reserved.</p>
             <p>Specialised Advisory & Intermediary Services</p>
+            <p>42 Lytton Road, London, Barnet, EN5 5BY</p>
         </div>
     </footer>
 
@@ -193,6 +219,48 @@
                 navLinks.classList.remove('active');
                 hamburger.classList.remove('active');
             });
+        });
+
+        // Info Cards Animation on Scroll
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        // Counter animation function
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = Math.ceil(target / 50);
+            const interval = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(interval);
+                }
+                element.textContent = current + '+';
+            }, 40);
+        }
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    
+                    // Start counter animation
+                    const numberElement = entry.target.querySelector('.card-number');
+                    if (numberElement && !numberElement.dataset.animated) {
+                        const target = parseInt(numberElement.dataset.target);
+                        animateCounter(numberElement, target);
+                        numberElement.dataset.animated = 'true';
+                    }
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.info-card').forEach(card => {
+            observer.observe(card);
         });
     </script>
 </body>
