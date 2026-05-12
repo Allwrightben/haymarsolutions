@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haymar Solutions - Payroll & Advisory Services</title>
+    <link rel="icon" href="assets/images/haymarsolutions.avif" type="image/avif">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -20,13 +21,18 @@
                     <span></span>
                     <span></span>
                 </button>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <div class="nav-actions">
+                        <a href="tel:0208 073 1952" class="phone-link">0208 073 1952</a>
+                        <a href="#contact" class="quote-button">Get a Quote</a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -39,12 +45,17 @@
         </video>
         <div class="hero-overlay"></div>
         <div class="container">
-            <div class="hero-content">
-                <h2>Labour Supply and Payroll Taking Time Away from Actually Running Your Business?</h2>
-                
-                <a href="#contact" class="cta-button">Get in touch</a>
-                
-                <p style="margin-top: 100px;">A payroll brokerage that will find the best, HMRC-compliant payroll solutions for your business.</p>
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <h2>Labour Supply and Payroll Taking Time Away from Actually Running Your Business?</h2>
+                    
+                    <a href="#contact" class="cta-button">Get in touch</a>
+                    
+                    <p style="margin-top: 100px;">A payroll brokerage that will compare over 1,000 providers to find the best, HMRC-compliant payroll solutions for your business.</p>
+                </div>
+                <div class="hero-image-space">
+                    <img src="assets/images/heroworkers.avif" alt="Hero image of workers in a construction site" class="hero-image">
+                </div>
             </div>
             
         </div>
@@ -206,17 +217,17 @@
 
     <script>
         const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
+        const navMenu = document.getElementById('nav-menu');
 
         hamburger.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
+            navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
         });
 
-        // Close menu when a link is clicked
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        // Close menu when a link or action is clicked
+        document.querySelectorAll('.nav-links a, .nav-actions a').forEach(link => {
             link.addEventListener('click', function() {
-                navLinks.classList.remove('active');
+                navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
             });
         });
