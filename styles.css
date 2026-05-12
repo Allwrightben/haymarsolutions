@@ -17,6 +17,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -25,6 +26,7 @@ body {
     line-height: 1.6;
     color: var(--light-text);
     letter-spacing: -0.01em;
+    overflow-x: hidden;
 }
 
 .container {
@@ -163,7 +165,7 @@ body {
     color: var(--dark-text);
     font-weight: 500;
     transition: color 0.3s ease;
-}}
+}
 
 .nav-links a:hover {
     color: var(--accent-color);
