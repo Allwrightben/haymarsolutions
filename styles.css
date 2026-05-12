@@ -574,9 +574,9 @@ body {
 }
 
 .about-logo img {
-        max-width: 520px;
+        max-width: 500px;
     height: auto;
-    border-radius: 18px;
+    border-radius: 1px;
     box-shadow: 0 18px 60px rgba(0, 0, 0, 0.08);
 }
 
